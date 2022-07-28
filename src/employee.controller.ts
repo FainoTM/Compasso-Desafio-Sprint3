@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { Employee } from "./employee.model";
 import { EmployeeService } from "./employee.service";
 
@@ -18,4 +18,8 @@ export class employeeController{
         return this.employeeService.getoneEmployee(params.id);
     }
     
+    @Post()
+    create(@Body() worker: Employee){
+        this.employeeService.create(worker);
+    }
 }

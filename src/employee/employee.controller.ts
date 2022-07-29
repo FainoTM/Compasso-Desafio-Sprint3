@@ -1,4 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Res, Response } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res} from "@nestjs/common";
+import { Response } from "express";
 import { Employee } from "./employee.model";
 import { EmployeeService } from "./employee.service";
 
@@ -9,7 +10,6 @@ export class employeeController{
     @Get()
     getallEmployee(){
         return this.employeeService.getallEmployee();
-        
     }
 
     @Get(":id")
@@ -18,8 +18,10 @@ export class employeeController{
     }
     
     @Post()
-    create(@Body() employee: Employee){
+    create(@Body() employee: Employee, @Res() res: Response){
         this.employeeService.create(employee);
+        res.status(HttpStatus.CREATED).send("Funcionário cadastrado");
+        res.status(HttpStatus.BAD_REQUEST).send("Ocorreu um erro de contrato");
     }
 
     @Put(':id')
@@ -28,7 +30,9 @@ export class employeeController{
     }
 
     @Delete(":id")
-    delete(@Param() params){
+    delete(@Param() params, @Res() res: Response){
         this.employeeService.delete(params.id)
+        res.status(HttpStatus.CREATED).send("Funcionário deletado");
+        res.status(HttpStatus.BAD_REQUEST).send("Ocorreu um erro de contrato");
     }
 }

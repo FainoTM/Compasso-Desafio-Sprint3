@@ -11,6 +11,9 @@ export class Employee{
         this.office = office;
         this.birthday = birthday;
     }
+};
 
-}
+
+
+
 

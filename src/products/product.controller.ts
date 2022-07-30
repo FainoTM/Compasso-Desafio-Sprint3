@@ -3,8 +3,8 @@ import { Response } from "express";
 import { Product } from "./product.model";
 import { ProductService } from "./product.service";
 
-@Controller('employee')
-export class employeeController{
+@Controller('products')
+export class productController{
     constructor(private productService: ProductService){}
 
     @Get()

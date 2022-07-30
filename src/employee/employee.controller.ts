@@ -33,6 +33,5 @@ export class employeeController{
     delete(@Param() params, @Res() res: Response){
         this.employeeService.delete(params.id)
         res.status(HttpStatus.CREATED).send("Funcionário deletado");
-        res.status(HttpStatus.BAD_REQUEST).send("Ocorreu um erro de contrato");
     }
 }

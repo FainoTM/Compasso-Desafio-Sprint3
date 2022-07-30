@@ -20,7 +20,6 @@ export class employeeController{
     @Post()
     create(@Body() employee: Employee, @Res() res: Response){
         this.employeeService.create(employee);
-        res.status(HttpStatus.CREATED).send("Funcionário cadastrado");
         res.status(HttpStatus.BAD_REQUEST).send("Ocorreu um erro de contrato");
     }
 

@@ -24,13 +24,11 @@ export class Employee{
     @IsNotEmpty({
         message: 'cargo do funcionário é obrigatório'
     })
+    @IsEnum(office)
     office: office;
     
     @IsNotEmpty({
         message: 'Data de nascimento é obrigatório'
-    })
-    @IsDate({
-        message: 'Data invalida'
     })
     birthday: Date;
 

@@ -30,6 +30,8 @@
 
 ```bash
 $ npm install
+$ nmp install sequelize
+$ npm install mongoose
 ```
 
 ## Running the app

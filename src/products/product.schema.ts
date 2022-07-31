@@ -15,6 +15,8 @@ export class product {
   @Prop({required: true})
   price: number;
   
+  @Prop()
+  employee_id: number;
   
 }
 

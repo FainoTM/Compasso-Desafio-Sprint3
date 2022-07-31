@@ -27,5 +27,7 @@ export class Product{
         message: 'Preço Inválido'
     })
     price: number;
+
+    employee_id: number;
     
 };
